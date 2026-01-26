@@ -1,0 +1,2380 @@
+﻿VBA TUTORIAL
+VBA is the acronym for Visual Basic for Applications. It is an integration of the  Microsoft's event-driven programming language Visual Basic with Microsoft Office applications such as Microsoft Excel. Excel VBA means Excel Visual Basic for Applications which can be created using the built-in Visual Basic Editor in Microsoft Excel, and you can use it to customize and extend the capabilities of MS Excel. An application created by Excel VBA is also known as macro.
+It helps techies to build customized applications and solutions to enhance the capabilities of those applications. The advantage of this facility is that we NEED NOT have visual basic installed on our PC but installing office will implicitly help us to achieve the purpose.
+We can use VBA in all office versions right from MS-Office 97 to MS-Office 2013 and also with any of the latest versions available. Among VBA, Excel VBA is the most popular one and the reason for using VBA is that we can build very powerful tools in MS Excel using linear programming.
+
+
+Purpose of VBA
+You might wonder why we need to use VBA in excel as MS-Excel itself provides loads on inbuilt functions. MS-Excel provides only basic inbuilt functions which may not be sufficient to perform complex calculations. Under those circumstances VBA becomes the most obvious solution.
+Example: One of the best examples is it is very hard to calculate monthly repayment for a loan using Excel's built-in formulas but it is easy to program a VBA for such calculation.
+
+
+Accessing VBA Editor
+In Excel window, press "ALT+F11". VBA window opens as shown below.
+ Decision making statements in VBScript 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Scope:
+Level
+	Description
+	Block scope
+	Available only within the code block in which it is declared
+	Procedure scope
+	Available to all code within the procedure in which it is declared
+	Module scope
+	Available to all code within the module, class, or structure in which it is declared
+	
+
+VB supports programming projects that run in both:
+∙        Microsoft Windows and,
+∙        Web (Internet) environments.
+
+
+VBA – Variables
+Variable is a named memory location used to hold a value that can be changed during the script execution. Below are the basic rules for naming a variable. Listed below are the rules for naming a variable.
+* You must use a letter as the first character.
+* You can't use a space, period (.), exclamation mark (!), or the characters @, &, $, # in the name.
+* Name can't exceed 255 characters in length.
+* Cannot use Visual Basic reserved keywords as variable name.
+Syntax
+In VBA, we need to declare the variables before using them.
+Dim <<variable_name>> As <<variable_type>>
+
+
+VBA – Constants
+Syntax
+In VBA, we need to assign a value to the declared Constants. Error would be thrown if we try to change the value of the constant.
+Const <<constant_name>> As <<constant_type>> = <<constant_value>>
+
+
+
+
+
+
+
+
+
+
+Data Types
+There are many VBA data types, which can be grossly divided into two main categories namely numeric and non-numeric data types.
+Numeric Data-Types
+Type
+	Range of Values
+	Byte
+	0 to 255
+	Integer
+	-32,768 to 32,767
+	Long
+	-2,147,483,648 to 2,147,483,648
+	Single
+	-3.402823E+38 to -1.401298E-45 for negative values 
+1.401298E-45 to 3.402823E+38 for positive values.
+	Double
+	-1.79769313486232e+308 to -4.94065645841247E-324 for negative values 
+4.94065645841247E-324 to 1.79769313486232e+308 for positive values.
+	Currency
+	-922,337,203,685,477.5808 to 922,337,203,685,477.5807
+	Decimal
+	+/- 79,228,162,514,264,337,593,543,950,335 if no decimal is use 
++/- 7.9228162514264337593543950335 (28 decimal places).
+	Non-Numeric Data Types
+Type
+	Range of Values
+	String(fixed length)
+	1 to 65,400 characters
+	String(variable length)
+	0 to 2 billion characters
+	Date
+	January 1, 100 to December 31, 9999
+	Boolean
+	True or False
+	Object
+	Any embedded object
+	Variant(numeric)
+	Any value as large as Double
+	Variant(text)
+	Same as variable-length string
+	VBA Operators
+What is an operator?
+Simple answer can be given using expression 4 + 5 is equal to 9. Here, 4 and 5 are called operands and + is called operator. VBA supports following types of operators:
+* Arithmetic Operators
+* Comparison Operators
+* Logical (or Relational) Operators
+* Concatenation Operators
+The Arithmatic Operators
+There are following arithmatic operators supported by VBA:
+Assume variable A holds 5 and variable B holds 10, then:
+Show Examples
+Operator
+	Description
+	Example
+	+
+	Adds two operands
+	A + B will give 15
+	-
+	Subtracts second operand from the first
+	A - B will give -5
+	*
+	Multiply both operands
+	A * B will give 50
+	/
+	Divide numerator by denumerator
+	B / A will give 2
+	%
+	Modulus Operator and remainder of after an integer division
+	B MOD A will give 0
+	^
+	Exponentiation Operator
+	B ^ A will give 100000
+	The Comparison Operators
+There are following comparison operators supported by VBA:
+Assume variable A holds 10 and variable B holds 20, then: 
+Operator
+	Description
+	Example
+	==
+	Checks if the value of two operands are equal or not, if yes then condition becomes true.
+	(A == B) is False.
+	<>
+	Checks if the value of two operands are equal or not, if values are not equal then condition becomes true.
+	(A <> B) is True.
+	>
+	Checks if the value of left operand is greater than the value of right operand, if yes then condition becomes true.
+	(A > B) is False.
+	<
+	Checks if the value of left operand is less than the value of right operand, if yes then condition becomes true.
+	(A < B) is True.
+	>=
+	Checks if the value of left operand is greater than or equal to the value of right operand, if yes then condition becomes true.
+	(A >= B) is False.
+	<=
+	Checks if the value of left operand is less than or equal to the value of right operand, if yes then condition becomes true.
+	(A <= B) is True.
+	The Logical Operators:
+There are following logical operators supported by VBA:
+Assume variable A holds 10 and variable B holds 0, then:
+Show Examples
+Operator
+	Description
+	Example
+	AND
+	Called Logical AND operator. If both the conditions are True then Expression becomes true.
+	a<>0 AND b<>0 is False.
+	OR
+	Called Logical OR Operator. If any of the two conditions are True then condition becomes true.
+	a<>0 OR b<>0 is true.
+	NOT
+	Called Logical NOT Operator. Use to reverses the logical state of its operand. If a condition is true then Logical NOT operator will make false.
+	NOT(a<>0 OR b<>0) is false.
+	XOR
+	Called Logical Exclusion. It is the combination of NOT and OR Operator. If one, and only one, of the expressions evaluates to True, result is True.
+	(a<>0 XOR b<>0) is false.
+	
+
+
+
+The Concatenation Operators
+There are following Concatenation operators supported by VBA:
+Assume variable A holds 5 and variable B holds 10 then:
+Show Examples
+Operator
+	Description
+	Example
+	+
+	Adds two Values as Variable Values are Numeric
+	A + B will give 15
+	&
+	Concatenates two Values
+	A & B will give 510
+	Assume variable A="Microsoft" and variable B="VBScript", then:
+Operator
+	Description
+	Example
+	+
+	Concatenates two Values
+	A + B will give MicrosoftVBScript
+	&
+	Concatenates two Values
+	A & B will give MicrosoftVBScript
+	Note : Concatenation Operators can be used for both numbers and strings. The Output depends on the context if the variables hold numeric value or String Value.
+
+
+VBA – Decisions
+Decision making allows programmers to control the execution flow of a script or one of its sections. The execution is governed by one or more conditional statements.
+Following is the general form of a typical decision making structure found in most of the programming languages:
+ Decision making statements in VBA 
+
+VBA provides following types of decision making statements. Click the following links to check their details.
+Statement
+	Description
+	if statement
+	An if statement consists of a boolean expression followed by one or more statements.
+	if..else statement
+	An if else statement consists of a boolean expression followed by one or more statements. If the condition is True, the statements under If statements are executed. If the condition is false, Else part of the script is Executed
+	if...elseif..else statement
+	An if statement followed by one or more ElseIfStatements, that consists of boolean expressions and then followed by an optional else statement, which executes when all the condition becomes false.
+	nested if statements
+	An if or elseif statement inside another if or elseifstatement(s).
+	switch statement
+	A switch statement allows a variable to be tested for equality against a list of values.
+	
+
+Switch Example:
+Dim number As Integer = 8
+Select Case number
+    Case 1 To 5
+        Debug.WriteLine("Between 1 and 5, inclusive")
+        ' The following is the only Case clause that evaluates to True.
+    Case 6, 7, 8
+        Debug.WriteLine("Between 6 and 8, inclusive")
+    Case 9 To 10
+        Debug.WriteLine("Equal to 9 or 10")
+    Case Else
+        Debug.WriteLine("Not between 1 and 10, inclusive")
+End Select
+VBA – Loops
+There may be a situation when you need to execute a block of code several number of times. In general, statements are executed sequentially: The first statement in a function is executed first, followed by the second, and so on.
+Programming languages provide various control structures that allow for more complicated execution paths.
+A loop statement allows us to execute a statement or group of statements multiple times and following is the general from of a loop statement in VBA.
+ Loop Architecture 
+
+VBA provides the following types of loops to handle looping requirements. Click the following links to check their detail.
+Loop Type
+	Description
+	for loop
+	Executes a sequence of statements multiple times and abbreviates the code that manages the loop variable.
+	for ..each loop
+	This is executed if there is at least one element in group and reiterated for each element in a group.
+	while..wend loop
+	This tests the condition before executing the loop body.
+	do..while loops
+	The do..While statements will be executed as long as condition is True.(i.e.,) The Loop should be repeated till the condition is False.
+	do..until loops
+	The do..Until statements will be executed as long as condition is False.(i.e.,) The Loop should be repeated till the condition is True.
+	
+
+
+
+
+
+Loop Control Statements:
+Loop control statements change execution from its normal sequence. When execution leaves a scope, all the remaining statements in the loop are NOT executed.
+VBA supports the following control statements. Click the following links to check their detail.
+Control Statement
+	Description
+	Exit For statement
+	Terminates the For loop statement and transfers execution to the statement immediately following the loop
+	Exit Do statement
+	Terminates the Do While statement and transfers execution to the statement immediately following the loop
+	
+
+For Loop Example:
+Sub LoopExample()
+Dim StartNumber As Integer
+Dim EndNumber As Integer
+EndNumber = 5
+For StartNumber = 1 To EndNumber
+MsgBox StartNumber
+Next StartNumber
+End Sub
+
+
+For Each Loop Example:
+Private Sub Constant_demo_Click()  
+ 'fruits is an array
+ fruits = Array("apple", "orange", "cherries")
+ Dim fruitnames As Variant
+ 
+
+
+ 'iterating using For each loop.
+ For Each Item In fruits
+    fruitnames = fruitnames & Item & Chr(10)
+ Next
+
+
+ MsgBox fruitnames
+End Sub
+
+
+While wend Loop example:
+Sub While_Loop_Example
+
+
+   Dim LTotal As Integer
+
+
+   LTotal = 1
+
+
+   While LTotal < 5
+      MsgBox (LTotal)
+      LTotal = LTotal + 1
+   Wend
+
+
+End Sub
+
+
+Do while Loop Example:
+Dim index As Integer = 0
+Do While index <= 10
+    Debug.Write(index.ToString & " ")
+    index += 1
+Loop
+
+
+Do Until Loop Example:
+Dim index As Integer = 0
+Do
+    Debug.Write(index.ToString & " ")
+    index += 1
+Loop Until index > 10
+
+
+VBA Sub Procedure
+Sub Procedures are similar to functions but there are few differences.
+* Sub procedures DONOT Return a value while functions may or may not return a value.
+* Sub procedures Can be called without call keyword.
+* Sub procedures are always enclosed within Sub and End Sub statements.
+Example:
+Sub Area(x As Double, y As Double)
+        MsgBox x * y
+End Sub
+Function findArea(Length As Double, Width As Variant)
+    area Length, Width    ' To Calculate Area 'area' sub proc is called
+End Function
+
+
+
+
+
+
+
+
+Vba Functions
+What is a Function?
+A function is a group of reusable code which can be called anywhere in your program. This eliminates the need of writing same code over and over again. This will enable programmers to divide a big program into a number of small and manageable functions.
+Apart from inbuilt Functions, VBA allows us to write user-defined functions as well. This section will explain you how to write your own functions in VBA.
+Function Definition
+A VBA function can have an optional return statement. This is required if you want to return a value from a function.
+For example, you can pass two numbers in a function and then you can expect from the function to return their multiplication in your calling program.
+NOTE : A function can return multiple values separated by comma as an array assigned to the function name itself.
+Before we use a function, we need to define that particular function. The most common way to define a function in VBA is by using the Function keyword, followed by a unique function name and it may or may not carry a list of parameters and a statement with a End Function keyword, which indicates the end of the function. The basic syntax is shown below:
+Syntax
+Add a button and add the below function
+Function Functionname(parameter-list)
+  statement 1
+  statement 2
+  statement 3
+  .......
+  statement n
+End Function
+Example
+Add the below function which returns the area. Note that a value/values can be returned with the function name itself.
+Function findArea(Length As Double, Optional Width As Variant)
+    If IsMissing(Width) Then
+        findArea = Length * Length
+    Else
+        findArea = Length * Width
+    End If
+End Function
+
+
+
+
+
+
+Calling Sub Procedures
+Sub calmul()
+    Dim i As Integer
+    Dim j As Double
+   i = InputBox("Enter the first number", "First Number")
+   j = InputBox("Enter the second number", "Second Number")
+   Call multiplication(i, j)
+  End Sub
+
+
+Sub multiplication(i As Integer, j As Double)
+MsgBox "Product is " & i * j
+End Sub
+
+
+Calling Function
+Sub calmul()
+    Dim i As Integer
+    Dim j As Double
+    Dim output As Integer
+    i = InputBox("Enter the first number", "First Number")
+    j = InputBox("Enter the second number", "Second Number")
+    output = multiplication(i, j)
+    MsgBox output, vbOKOnly
+End Sub
+Function multiplication(i As Integer, j As Double)
+    multiplication = i * j
+End Function
+
+
+
+
+Passing Arguments By Ref
+Sub test()
+Dim x As Integer
+x = 10
+
+MsgBox Triple(x)
+MsgBox x
+End Sub
+
+
+Function Triple(ByRef x As Integer) As Integer
+
+x = x * 3
+Triple = x
+
+End Function
+
+
+Result when you click the command button on the sheet:
+ ByRef Result 
+
+ ByRef Result 
+
+
+
+Passing Arguments By Val
+
+
+Function Triple(ByVal x As Integer) As Integer
+
+x = x * 3
+Triple = x
+
+End Function
+Result when you click the command button on the sheet:
+ ByVal Result 
+
+ ByVal Result 
+
+
+
+Auto Fill
+Sub Autofill()
+    Set SourceRange = Worksheets("Sheet1").Range("A1:A2")
+    SourceRange.Autofill Destination:=Worksheets("Sheet1").Range("A1:A20")
+End Sub
+
+
+Auto Filter
+Sub Autofilter()
+      ''single criteria
+      Worksheets("Sheet1").Range("A1:B1").AutoFilter field:=1, Criteria1:="a", VisibleDropDown:=True
+      ''multiple criteria
+      Worksheets("Sheet1").Range("A1:B1").AutoFilter field:=1, Criteria1:=Array("a","b"), Operator:=xlFilterValues
+End Sub
+
+
+
+
+To remove Filters use
+ThisWorkbook.Sheets(1).AutoFilterMode = False
+
+
+
+
+Difference Between Advanced and Auto Filter
+The Advanced Filter gives you much more flexibility in specifying what you want to filter and how you do it. It allows you to specify a criteria and take the filtered results and put them into another part of your spreadsheet. The normal filter will just filter things in place and does not allow you to do as complex a filter as Advanced Filter does.
+
+
+Binding
+Binding is a process of matching function calls written by the programmer to the actual code (internal or external) that implements the function. It is done when the application is compiled, and all functions called in code must be bound before the code can be executed.
+
+To understand the process, think of "binding" in terms of publishing a book. Imagine your code is like the text of the book where in a certain paragraph you have written something like "see chapter 12, page x for more details." You don't know what the page number is until the book is finished, so before the paragraph can be read as intended, all the pages of the book must be bound together and the correct page number inserted into the paragraph. You wait for the book to be "bound" before you can reference other parts of the book.
+Early binding
+known as early (or v-table) binding.
+To use early binding on an object, you need to know what its v-table looks like. In Visual Basic, you can do this by adding a reference to a type library that describes the object, its interface (v-table), and all the functions that can be called on the object. Once that is done, you can declare an object as being a certain type, then set and use that object using the v-table. For example, if you wanted to Automate Microsoft Office Excel using early binding, you would add a reference to the "Microsoft Excel 8.0 Object Library" from the Project|References dialog, and then declare your variable as being of the type "Excel.Application." From then on, all calls made to your object variable would be early bound:
+' Set reference to 'Microsoft Excel 8.0 Object Library' in
+' the Project|References dialog (or Tools|References for VB4 or VBA).
+
+
+' Declare the object as an early-bound object
+  Dim oExcel As Excel.Application
+
+
+  Set oExcel = CreateObject("Excel.Application")
+
+
+' The Visible property is called via the v-table
+  oExcel.Visible = True
+Late binding
+' No reference to a type library is needed to use late binding.
+' As long as the object supports IDispatch, the method can 
+' be dynamically located and invoked at run-time.
+
+
+' Declare the object as a late-bound object
+  Dim oExcel As Object
+
+
+  Set oExcel = CreateObject("Excel.Application")
+
+
+' The Visible property is called via IDispatch
+  oExcel.Visible = True
+
+
+
+
+
+
+Copy and Paste
+    Worksheets("Sheet1").Range("A2").Copy 
+    Worksheets("Sheet2").Range("A2").PasteSpecial Paste:=xlPasteFormulas
+    Worksheets("Sheet2").Range("A2").PasteSpecial Paste:= xlPasteFormats
+
+
+    Range("A1:B10").Copy Destination:=Range("E1")
+
+
+    'Disable marching ants around copied range
+    Application.CutCopyMode = False
+
+
+
+
+Cell Format
+Worksheets("Sheet1").Range("A17").NumberFormat = "General" 
+Worksheets("Sheet1").Rows(1).NumberFormat = "0.00" 
+
+
+General     General
+Number      0
+Currency    $#,##0.00;[Red]$#,##0.00
+Date        m/d/yy
+Time        [$-F400]h:mm:ss am/pm
+Percentage  0.00%
+Fraction    # ?/?
+Scientific  0.00E+00
+Text        @
+Special     ;;
+Custom      #,##0_);[Red](#,##0)
+
+
+Formatting Cells Number
+General
+Range("A1").NumberFormat = "General"
+Number
+Range("A1").NumberFormat = "0.00"
+Currency
+Range("A1").NumberFormat = "$#,##0.00"
+Accounting
+Range("A1").NumberFormat = "_($* #,##0.00_);_($* (#,##0.00);_($* ""-""??_);_(@_)"
+Date
+Range("A1").NumberFormat = "yyyy-mm-dd;@"
+Time
+Range("A1").NumberFormat = "h:mm:ss AM/PM;@"
+Percentage
+Range("A1").NumberFormat = "0.00%"
+Fraction
+Range("A1").NumberFormat = "# ?/?"
+Scientific
+Range("A1").NumberFormat = "0.00E+00"
+Text
+Range("A1").NumberFormat = "@"
+Special
+Range("A1").NumberFormat = "00000"
+Custom
+Range("A1").NumberFormat = "$#,##0.00_);[Red]($#,##0.00)"
+
+
+Cell Comments
+Add the comment
+With Worksheets(1).Range("e5").AddComment 
+ .Visible = False 
+ .Text "reviewed on " & Date 
+End With
+
+
+Delete the Comment
+Set rng = ActiveSheet.Cells(4, 4)
+    If Not (rng.Comment Is Nothing) Then rng.Comment.Delete
+
+
+
+
+
+
+
+
+
+
+
+
+Practical Programs:
+* Write Data to Worksheet Cell in Excel VBA
+* Writing and Reading Excel Worksheet Cells Ranges in VBA
+* Read or Get Data from Worksheet Cell to VBA in Excel
+* Select Cell Range in Excel VBA
+* Copy Data from One Range to Another in Excel VBA
+* Clear Cells in Excel Range Worksheet using VBA
+* Change Font Color in Excel VBA
+With Selection.Font
+.Name = "Arial Black"
+.Size = 12
+End with
+* Change Font to Bold in Excel VBA
+* Change Text Case – Upper Lower in Excel VBA
+Dim LResult As String
+LResult = UCase("This is a TEST")
+* Change Background Color of Cell Range in Excel VBA
+Range("A1").Interior.Color = RGB(255, 0, 0) Or
+Range("A1").Interior.ColorIndex = 37
+* Merge UnMerge Cell Range in Excel VBA
+Range("A1:B3").Merge
+Range("A1:B3").UnMerge
+* Add Clear Comments in Excel VBA
+
+
+* Change Row Height and Column Width using Excel VBA
+Rows("3:25").RowHeight = 25
+* Delete Rows and Columns in Excel VBA
+* Hide UnHide Columns in Excel Worksheet using VBA
+* Hide UnHide Rows in Excel Worksheet using VBA
+Rows("5:8").EntireRow.Hidden = True
+* Finding last used Column with data in particular Row
+* Finding last used Row with data in particular Column
+'Ctrl + Shift + End
+  LastRow = sht.Cells(sht.Rows.Count, "A").End(xlUp).Row
+'Using Table Range
+  LastRow = sht.ListObjects("Table1").Range.Rows.Count
+'Using Named Range
+  LastRow = sht.Range("MyNamedRange").Rows.Count
+* Inserting Columns in Excel Worksheet using VBA
+'Inserting a Column at Column B
+Range("B1").EntireColumn.Insert
+'Inserting 2 Columns from C
+Range("C:D").EntireColumn.Insert
+* Inserting Rows in Excel Worksheet using VBA
+* Find Last Column with data in Worksheet using Excel VBA
+* Finding last used Row with data in Excel Worksheet using VBA
+Cells.Find("*",SearchOrder:=xlByRows,SearchDirection:=xlPrevious).Row
+* Create New Workbook in Excel VBA
+Dim Aname As String
+Aname = ActiveWorkbook.Sheets(1).Range("A1").Value
+Workbooks.Add
+ActiveWorkbook.SaveAs Filename:=Aname & ".xls"
+* Run a Macro Automatically on Opening Excel Workbook
+* Open and Close Excel Workbook using VBA
+* Save Workbook Using Excel VBA to Specific Folder
+ActiveWorkbook.SaveAs "C:\WorkbookName.xls"
+* Protect and Unprotect Excel Workbook using VBA
+Sub sbProtectAllSheets()
+Dim pwd1 As String, pwd2 As String
+pwd1 = InputBox("Please Enter the password")
+If pwd1 = "" Then Exit Sub
+pwd2 = InputBox("Please re-enter the password")
+If pwd2 = "" Then Exit Sub
+'Check if both the passwords are identical
+If InStr(1, pwd2, pwd1, 0) = 0 Or _
+InStr(1, pwd1, pwd2, 0) = 0 Then
+MsgBox "You entered different passwords. No action taken"
+Exit Sub
+End If
+For Each ws In Worksheets
+ws.Protect Password:=pwd1
+Next
+MsgBox "All sheets Protected."
+Exit Sub
+End Sub
+* Protect and UnProtect Worksheets in Excel VBA
+ActiveSheet.UnProtect Password:="YourPassword"
+* Hide UnHide Worksheets in Excel VBA
+* Delete Worksheet in Excel VBA
+* Copy Data from one Worksheet to another in Excel VBA
+* Change the Color of Sheet Tabs in Excel VBA
+Sheets("Sheet2").Tab.ColorIndex = 3 '3=Red , 4=green,5=blue,6=yellow,etc...
+* Activate Workbook Or Worksheet in Excel VBA
+* Get Active Workbook or Worksheet Name Path FullName in Excel VBA
+ActiveWorkbook.FullName
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Charts in Excel
+Create a Chart
+To create a line chart, execute the following steps.
+1. Select the range A1:D7.
+2. On the Insert tab, in the Charts group, choose Line, and select Line with Markers.
+ Create a Line Chart in Excel 
+
+Result:
+ Line Chart in Excel 
+
+Change Chart Type
+You can easily change to a different type of chart at any time.
+1. Select the chart.
+2. On the Insert tab, in the Charts group, choose Column, and select Clustered Column.
+ Change Chart Type 
+
+Result:
+ Column Chart in Excel 
+
+Switch Row/Column
+If you want the animals, displayed on the vertical axis, to be displayed on the horizontal axis instead, execute the following steps.
+1. Select the chart. The Chart Tools contextual tab activates.
+2. On the Design tab, click Switch Row/Column.
+ Switch Row/Column 
+
+Result:
+ Switched Column Chart 
+
+Chart Title
+To add a chart title, execute the following steps.
+1. Select the chart. The Chart Tools contextual tab activates.
+2. On the Layout tab, click Chart Title, Above Chart.
+ Add Chart Title 
+
+3. Enter a title. For example, Population.
+Result:
+ Chart Title 
+
+Legend Position
+By default, the legend appears to the right of the chart. To move the legend to the bottom of the chart, execute the following steps.
+1. Select the chart. The Chart Tools contextual tab activates.
+2. On the Layout tab, click Legend, Show Legend at Bottom.
+ Change Legend Position 
+
+Result:
+ Legend at Bottom 
+
+Data Labels
+You can use data labels to focus your readers' attention on a single data series or data point.
+1. Select the chart. The Chart Tools contextual tab activates.
+2. Click an orange bar to select the Jun data series. Click again on an orange bar to select a single data point.
+3. On the Layout tab, click Data Labels, Outside End.
+ Add Data Label 
+
+Result:
+ Data Label 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Axes
+Most chart types have two axes: a horizontal axis (or x-axis) and a vertical axis (or y-axis). This example teaches you how to change the axis type, add axis titles and how to change the scale of the vertical axis.
+To create a column chart, execute the following steps.
+1. Select the range A1:B7.
+2. On the Insert tab, in the Charts group, choose Column, and select Clustered Column.
+ Create a Column Chart in Excel 
+
+Axis Type
+As you can see below, Excel also shows the dates between 8/24/2013 and 9/1/2013. To remove these dates, change the axis type from Date axis to Text axis.
+1. Right click the horizontal axis, and then click Format Axis.
+ Format Horizontal Axis 
+
+2. Click Text axis.
+ Change Axis Type 
+
+3. Click Close.
+Result:
+ Text Axis 
+
+Axis Titles
+To add a horizontal or vertical axis title, execute the following steps.
+1. Select the chart. The Chart Tools contextual tab activates.
+2. On the Layout tab, click Axis Titles.
+3. Click Primary Vertical Axis Title, Rotated Title.
+ Add Vertical Axis Title 
+
+4. Enter a vertical axis title. For example, Visitors.
+Result:
+ Vertical Axis Title 
+
+Axis Scale
+By default, Excel automatically determines the values on the vertical axis. To change these values, execute the following steps.
+1. Right click the vertical axis, and then click Format Axis.
+ Format Vertical Axis 
+
+2. Click the Fixed option button next to Maximum.
+3. Enter the value 12000.
+ Fixed Maximum Value 
+
+4. Click close.
+Result:
+ Different Scale 
+
+
+
+Chart Sheet
+So far we have only seen charts on the same worksheet as the source data (embedded charts). However, you can also move a chart to a separate sheet that only contains a chart (chart sheet).
+To move a chart to a chart sheet, execute the following steps.
+1. Select the chart. The Chart Tools contextual tab activates.
+2. On the Design tab, click Move Chart.
+ Move a Chart in Excel 
+
+The Move Chart dialog box appears.
+3. Click New sheet and enter a name.
+4. Click OK.
+ Click New sheet 
+
+Result:
+ Chart Sheet 
+
+Note: repeat these steps, but instead of New sheet at step 3, click Object in, to move the chart back to the same worksheet as the source data.
+Create a chart through vba
+Sub CreateChart()
+'PURPOSE: Create a chart (chart dimensions are required)
+
+
+Dim rng As Range
+Dim cht As ChartObject
+
+
+'Your data range for the chart
+  Set rng = ActiveSheet.Range("A24:M27")
+
+
+'Create a chart
+  Set cht = ActiveSheet.ChartObjects.Add( _
+    Left:=ActiveCell.Left, _
+    Width:=450, _
+    Top:=ActiveCell.Top, _
+    Height:=250)
+
+
+'Give chart some data
+  cht.Chart.SetSourceData Source:=rng
+
+
+'Determine the chart type
+  cht.Chart.ChartType = xlColumnClustered
+       
+End Sub
+ 
+
+
+
+
+Chart sheet example through vba
+
+
+Sub createchartsheet()
+Dim ChartSheet1 As Chart
+Set ChartSheet1 = Charts.Add
+With ChartSheet1
+.SetSourceData Source:=Sheets("Sheet1").Range("a24:m27")
+.ChartType = xlColumnClustered
+.HasTitle = True
+.ChartTitle.Text = "Chart Sheet Example"
+'.Axes(xlCategory, xlPrimary).HasTitle = True
+'.Axes(xlCategory, xlPrimary).AxisTitle.Characters.Text = Range("A1")
+.Axes(xlValue, xlPrimary).HasTitle = True
+.Axes(xlValue, xlPrimary).AxisTitle.Characters.Text = "test"
+End With
+End Sub
+
+
+
+
+Combobox
+Add Items to ComboBox while opening Workbook
+You can Add items to the ComboBox while opening the Excel Workbook. The following example will show you how to populate the items in ComboBox while opening excel file.
+Code:
+Private Sub Workbook_Open()
+Application.EnableEvents = False
+'Clear ComboBox1 Items
+Call Clear_ComboBox
+'Add Items to ComboBox1 in Sheet1 while opening workbook
+With Sheet1.ComboBox1
+.AddItem "Fruits"
+.AddItem "Vegetables"
+.AddItem "Soaps"
+.AddItem "Beverages"
+End With
+Application.EnableEvents = True
+End Sub
+Output:
+Here is the screen-shot of the ComboBox1 with items.
+ ComboBox in Excel VBA-Add Items 
+'Get Items to ComboBox2 based on ComboBox1 selection
+Private Sub ComboBox1_Change()
+'Variable Declaration
+Dim iCnt As Integer
+'Clear Combobox2 before loading items
+ComboBox2.Clear
+With ComboBox2
+Select Case ComboBox1
+Case "Fruits"
+.AddItem "Apple"
+.AddItem "Pomegranate"
+.AddItem "Grape"
+.AddItem "Pineapple"
+.AddItem "Gouva"
+Case "Vegetables"
+.AddItem "Tomato"
+.AddItem "Brinjal"
+.AddItem "Radish"
+.AddItem "Potato"
+.AddItem "Onion"
+Case "Beverages"
+.AddItem "Pepsi"
+.AddItem "Limca"
+.AddItem "Miranda"
+.AddItem "Sprite"
+.AddItem "Coco Cola"
+Case "Soaps"
+.AddItem "Lux"
+.AddItem "Rexona"
+.AddItem "Dove"
+.AddItem "Lifeboy"
+.AddItem "Liril"
+End Select
+End With
+End Sub
+
+
+Here is the screen-shot to show you adding the items to second ComboBox based on first ComboBox Selection.
+ ComboBox in Excel VBA-Add Items to ComboBox2 
+Get data to TextBox based on ComboBox2 selection
+The following example will show you how to get data to TextBox based on ComoBox2 selection.
+Code:
+'Get Price based on ComboBox2 selection
+Private Sub ComboBox2_Change()
+'Variable Declaration
+Dim iRow As Integer
+iRow = 1
+'Clear Combobox2 before loading items
+TextBox1.Text = ""
+'Get Price based on ComboBox2 selection
+Do
+iRow = iRow + 1
+Loop Until ComboBox2.Text = Sheets("Data").Cells(iRow, 3)
+TextBox1.Text = Sheets("Data").Cells(iRow, 4)
+TextBox2.Text = Sheets("Data").Cells(iRow, 5)
+End Sub
+Output:
+Here is the sample screen-shot.
+
+ ComboBox in Excel VBA-Output 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XML
+You can convert your Excel file to an XML data file, or vice versa. This enables you to exchange data between different applications. First, turn on the Developer tab.
+Here's the data we want to convert to an XML data file.
+ Excel File 
+
+First, we will create a schema based on XML source data. The schema defines the structure of the XML file. We have to do this outside Excel.
+1. For example, open Notepad and add the following lines.
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<data-set xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <record>
+       <LastName>Smith</LastName>
+       <Sales>16753</Sales>
+       <Country>UK</Country>
+       <Quarter>Qtr 3</Quarter>
+    </record>
+    <record>
+       <LastName>Johnson</LastName>
+       <Sales>14808</Sales>
+       <Country>USA</Country>
+       <Quarter>Qtr 4</Quarter>
+    </record>
+</data-set>
+Note: the tags refer to the column names, but you can give them any name you want! For example, instead of LastName use Name.
+2. Save the file as schema.xml.
+3. Open data-set.xls.
+4. On the Developer tab, open the XML Source task pane.
+ Open the XML Source Task Pane 
+
+5. To add an XML map, click XML Maps...
+ Add XML Map 
+
+The XML Maps dialog box appears.
+6. Click Add...
+ Click Add 
+
+7. Select schema.xml and click OK twice.
+8. Now simply drag (map) the 4 elements from the tree onto the worksheet (row 1).
+ Drag the Elements onto the Worksheet 
+
+9. On the Developer tab, under the XML group, click Export.
+ Click Export 
+
+10. Save your file as data-set.xml and press Enter.
+Result:
+ XML Data File 
+
+
+
+
+
+ADO in Excel VBA
+What is ADO?
+ADO Stands for ActiveX Data Objects, is Microsoft’s Client-Server technology to access the data between Client and Server.  ADO can’t access the data source directly, it will take help of OLE DB Provider to communicate with the data source.  Most of the times OLE DB providers are specific to a particular Data Source Type. However, we have an OLE DB provider for ODBC, it is a general purpose provider with help of this ADO can access any Data source which can understand ODBC.
+ ADO in Excel VBA - Connecting to a database using SQL -example-1 
+What is Database?
+Database (DB) is a collection of information organized in such a way that a computer program can easily understand and read the data. And the Database Banagement System (DBMS) are desined to understand and interact with other computer applications to perform the different operations on the data. MySQL, Microsoft SQL Server, Microsoft Access, Oracle, and IBM DB2 are some of the well know DBMS.
+Generally the information stored in the data in the form of tables, and a table is designed with set of records (rows) and fields (columns).
+You can use Microsoft Excel to store some data, where an Excel workbook will act as a data source, worksheet will be a table and the rows and the columns of the worksheet will be records and the fields of the table.
+What is SQL?
+SQL Stands for Structured Query Language, ADO use SQL commands to communicate with the databases. Following are the most commonly used SQL commands to deal with the databases:
+SELECT command used to retrieve the data from a data source
+	INSERT command used to insert the records to a data source
+	UPDATE command used to modify the existing records of the data source
+	DELETE command used to delete the records from a data source
+	
+
+ADO in Excel VBA – Practical Learning: Using ADO and SQL with VBA
+To retrieve the data from any data source into Excel using ADO:
+1. We have to Open the connection to the Data Source
+2. We need to run the required SQL command
+3. We have to copy the resulted record set into our worksheet
+4. We have to close the record set and connection
+ ADO in Excel VBA - Connecting to a database using SQL -example-2 
+
+Step 1:Add reference for Microsoft Activex Data Objects Library
+ ADO in Excel VBA - Connecting to a database using SQL -example-3 
+
+Step 2: Create the Connection String with Provider and Data Source options
+Step 3: Open the Connection to data source
+Step 4: Create SQL Command String
+Step 5: Get the records by Opening this Query with in the Connected data source
+Step 6: Copy the reords into our worksheet
+Step 7: Close the Record Set and Connection
+So, the final program should look like this:
+Sub sbADOExample()
+Dim sSQLQry As String
+Dim ReturnArray
+Dim Conn As New ADODB.Connection
+Dim mrs As New ADODB.Recordset
+Dim DBPath As String, sconnect As String
+DBPath = ThisWorkbook.FullName
+'You can provide the full path of your external file as shown below
+'DBPath ="C:\InputData.xlsx"
+sconnect = "Provider=MSDASQL.1;DSN=Excel Files;DBQ=" & DBPath & ";HDR=Yes';"
+Conn.Open sconnect
+sSQLSting = "SELECT * From [Sheet1$]" ' Your SQL Statement (Table Name= Sheet Name=[Sheet1$])
+mrs.Open sSQLSting, Conn
+'=>Load the Data into an array
+'ReturnArray = mrs.GetRows
+''OR''
+'=>Paste the data into a sheet
+Sheet2.Range("A2").CopyFromRecordset mrs
+'Close Recordset
+mrs.Close
+'Close Connection
+Conn.Close
+End Sub
+
+
+Sample Program to retrieve data from access to Excel
+Option Explicit
+Sub Import_AccessData()
+Dim cnt As ADODB.Connection
+Dim rst1 As ADODB.Recordset, rst2 As ADODB.Recordset
+Dim stDB As String, stSQL1 As String, stSQL2 As String
+Dim stConn As String
+Dim wbBook As Workbook
+Dim wsSheet1 As Worksheet
+Dim lnField As Long, lnCount As Long
+
+
+'Instantiate the ADO-objects.
+Set cnt = New ADODB.Connection
+Set rst1 = New ADODB.Recordset
+Set rst2 = New ADODB.Recordset
+
+
+Set wbBook = ThisWorkbook
+Set wsSheet1 = wbBook.Worksheets(1)
+
+
+'Path to the database.
+stDB = "c:\db1.mdb"
+
+
+'Create the connectionstring.
+stConn = "Provider=Microsoft.Jet.OLEDB.4.0;" _
+         & "Data Source=" & stDB & ";"
+         
+'The 1st raw SQL-statement to be executed.
+stSQL1 = "SELECT * FROM Production_E1"
+
+
+'The 2nd raw SQL-statement to be executed.
+stSQL2 = "SELECT * FROM Production_E2"
+
+
+'Clear the worksheet.
+wsSheet1.Range("A1").CurrentRegion.Clear
+
+
+With cnt
+.Open (stConn) 'Open the connection.
+.CursorLocation = adUseClient 'Necessary to disconnect the recordset.
+End With
+
+
+With rst1
+.Open stSQL1, cnt 'Create the recordset.
+Set .ActiveConnection = Nothing 'Disconnect the recordset.
+End With
+
+
+With rst2
+.Open stSQL2, cnt 'Create the recordset.
+Set .ActiveConnection = Nothing 'Disconnect the recordset.
+End With
+
+
+With wsSheet1
+.Cells(2, 1).CopyFromRecordset rst1 'Copy the 1st recordset.
+.Cells(2, 2).CopyFromRecordset rst2 'Copy the 2nd recordset.
+End With
+
+
+'Release objects from the memory.
+rst1.Close
+Set rst1 = Nothing
+rst2.Close
+Set rst2 = Nothing
+cnt.Close
+Set cnt = Nothing
+End Sub
+
+
+Formulas
+In VBA u have to use Range("A11").Formula = "=SUM(A1:A10)"
+Refer: http://www.techonthenet.com/excel/formulas/
+
+
+
+
+
+
+
+
+
+
+Hyperlinks
+ActiveSheet.Hyperlinks.Add Anchor:=Selection, Address:="", SubAddress:= _
+        "Sheet3!A1", TextToDisplay:="test"
+or
+    Range("C6").Select
+    ActiveSheet.Hyperlinks.Add Anchor:=Selection, Address:= _
+        "http://www.gmail.com", TextToDisplay:="mani"
+Pivot Table
+'Example Data in Sheet1
+'Department  Region     Profit
+'109            5         119000
+'107            3         64000
+'109            2         12000
+Sub sbCreatePivot()
+'Declaration
+Dim ws As Worksheet
+Dim pc As PivotCache
+Dim pt As PivotTable
+'Adding new worksheet
+Set ws = Worksheets.Add
+'Creating Pivot cache
+Set pc = ActiveWorkbook.PivotCaches.Create(xlDatabase, "Sheet1!R1C1:R10C3")
+'Creating Pivot table
+Set pt = pc.CreatePivotTable(ws.Range("B3"))
+'Setting Fields
+With pt
+'set row field
+With .PivotFields("Department")
+.Orientation = xlRowField
+.Position = 1
+End With
+'set column field
+With .PivotFields("Region")
+.Orientation = xlColumnField
+.Position = 1
+End With
+'set data field
+.AddDataField .PivotFields("Profit"), "Sum of Profit", xlSum
+End With
+End Sub
+
+
+Pivot Chart
+Sub sbPivotChartInNewSheet()
+'declaration
+Dim pt As PivotTable, ptr As Range, cht As Chart
+'If no pivots exit procedure
+If ActiveSheet.PivotTables.Count = 0 Then Exit Sub
+'setting piovot table
+Set pt = ActiveSheet.PivotTables(1)
+Set ptr = pt.TableRange1
+' Add a new chart sheet.
+Set cht = Charts.Add
+With cht
+.SetSourceData ptr
+.ChartType = xlLine
+End With
+End Sub
+Watch
+Watch a formula and its result by using the Watch Window
+ Cell Watch toolbar 
+ When cells are not visible on a worksheet, you can watch those cells and their formulas in the Watch Windowtoolbar. The Watch Window makes it convenient to inspect, audit, or confirm formula calculations and results in large worksheets. By using the Watch Window, you don't need to repeatedly scroll or go to different parts of your worksheet.
+This toolbar can be moved or docked like any other toolbar. For example, you can dock it on the bottom of the window. The toolbar keeps track of the following properties of a cell: workbook, sheet, name, cell, value, and formula.
+NOTE   You can only have one watch per cell.
+What do you want to do?
+Add cells to the Watch Window
+Remove cells from the Watch Window
+Add cells to the Watch Window
+1. Select the cells that you want to watch.
+To select all cells on a worksheet with formulas, on the Home tab, in the Editing group, click Find & Replace, click Go To Special, and then click Formulas.
+2. On the Formulas tab, in the Formula Auditing group, click Watch Window.
+ The Formula Auditing group on the Formulas tab 
+
+3. Click Add Watch  Button image .
+4. Click Add.
+5. Move the Watch Window toolbar to the top, bottom, left, or right side of the window.
+6. To change the width of a column, drag the boundary on the right side of the column heading.
+7. To display the cell that an entry in Watch Window toolbar refers to, double-click the entry.
+NOTE   Cells that have external references to other workbooks are displayed in the Watch Window toolbar only when the other workbook is open.
+Top of Page
+Remove cells from the Watch Window
+   1. If the Watch Windowtoolbar is not displayed, on the Formulas tab, in the Formula Auditing group, clickWatch Window.
+   2. Select the cells that you want to remove.
+To select multiple cells, press CTRL and then click the cells.
+   3. Click Delete Watch  Button image .
+
+
+Cell References
+Cell references in Excel are very important. Understand the difference between relative, absolute and mixed reference, and you are on your way to success.
+Relative Reference
+By default, Excel uses relative reference. See the formula in cell D2 below. Cell D2 references (points to) cell B2 and cell C2. Both references are relative.
+ Relative Reference Example 
+
+1. Select cell D2, click on the lower right corner of cell D2 and drag it down to cell D5.
+ Relative Reference Result 
+
+Cell D3 references cell B3 and cell C3. Cell D4 references cell B4 and cell C4. Cell D5 references cell B5 and cell C5. In other words: each cell references its two neighbors on the left.
+Absolute Reference
+See the formula in cell E3 below.
+1. To create an absolute reference to cell H3, place a $ symbol in front of the column letter and row number of cell H3 ($H$3) in the formula of cell E3.
+ Absolute Reference Example 
+
+2. Now we can quickly drag this formula to the other cells.
+ Absolute Reference Result 
+
+The reference to cell H3 is fixed (when we drag the formula down and across). As a result, the correct lengths and widths in inches are calculated.
+Mixed Reference
+Sometimes we need a combination of relative and absolute reference (mixed reference).
+1. See the formula in cell F2 below.
+ Mixed Reference Example 
+
+2. We want to copy this formula to the other cells quickly. Drag cell F2 across one cell, and look at the formula in cell G2.
+ Mixed Reference Example 
+
+Do you see what happens? The reference to the price should be a fixed reference to column B. Solution: place a $ symbol in front of the column letter of cell B2 ($B2) in the formula of cell F2. In a similar way, when we drag cell F2 down, the reference to the reduction should be a fixed reference to row 6. Solution: place a $ symbol in front of the row number of cell B6 (B$6) in the formula of cell F2.
+Result:
+ Mixed Reference Example 
+
+Note: we don't place a $ symbol in front of the row number of B2 (this way we allow the reference to change from B2 (Jeans) to B3 (Shirts) when we drag the formula down). In a similar way, we don't place a $ symbol in front of the column letter of B6 (this way we allow the reference to change from B6 (Jan) to C6 (Feb) and D6 (Mar) when we drag the formula across).
+3. Now we can quickly drag this formula to the other cells.
+ Mixed Reference Result 
+
+The references to column B and row 6 are fixed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Excel Dialog
+
+
+Use the Dialogs property to return the Dialogs collection. The following code example displays the number of available built-in Microsoft Excel dialog boxes.
+VBA
+MsgBox Application.Dialogs.Count
+
+
+Use Dialogs(index), where index is a built-in constant identifying the dialog box, to return a single Dialog object. The following example runs the built-in File Open dialog box.
+VBA
+dlgAnswer = Application.Dialogs(xlDialogOpen).Show
+
+
+The following code example opens an e-mail message in Microsoft Outlook with the current workbook attached.
+VBA
+Sub SendIt() 
+    Application.Dialogs(xlDialogSendMail).Show arg1:="ask@mrexcel.com", arg2:="This goes in the subject line" 
+End Sub 
+
+
+File Dialog
+msoFileDialogFilePicker. Allows user to select a file.
+	msoFileDialogFolderPicker. Allows user to select a folder.
+	msoFileDialogOpen. Allows user to open a file.
+	msoFileDialogSaveAs. Allows user to save a file.
+	
+
+Sub UseFileDialogOpen() 
+ 
+    Dim lngCount As Long 
+ 
+    ' Open the file dialog 
+    With Application.FileDialog(msoFileDialogOpen) 
+        .AllowMultiSelect = True 
+        .Show 
+ 
+        ' Display paths of each file selected 
+        For lngCount = 1 To .SelectedItems.Count 
+            MsgBox .SelectedItems(lngCount) 
+        Next lngCount 
+ 
+    End With 
+ 
+End Sub
+
+
+Save as Dialog
+Sub Example1()
+Dim intChoice As Integer 
+Dim strPath As String 
+
+'make the file dialog visible to the user 
+intChoice = Application.FileDialog(msoFileDialogSaveAs).Show
+'determine what choice the user made 
+If intChoice <> 0 Then 
+    'get the file path selected by the user 
+    strPath = _ 
+        Application.FileDialog(msoFileDialogSaveAs).SelectedItems(1) 
+    'displays the result in a message box 
+Call MsgBox(strPath, vbInformation, "Save Path")
+End If 
+End Sub 
+
+
+
+
+Excel Transfer
+Dim x As Workbook, y As Workbook
+Dim ws1 As Worksheet, ws2 As Worksheet
+
+
+Set x = Workbooks.Open("path to copying book")
+Set y = Workbooks.Open("path to pasting book")
+
+
+Set ws1 = x.Sheets("Sheet you want to copy from")
+Set ws2 = y.Sheets("Sheet you want to copy to")
+
+
+With ws1   
+    .Cells.Copy ws2.cells
+    y.Close True
+    x.Close False
+End With
+
+
+End Sub
+
+
+
+
+
+
+Chart Export
+Sub test()
+Worksheets("Sheet1").ChartObjects(1) _
+.Chart.Export _
+ Filename:="C:\Users\A022397\Downloads\" & "current_sales.gif", FilterName:="GIF"
+End Sub
+
+
+In the same way u can copy the chart in excel and save in word,ppt etc.
+
+
+
+
+Chart Events
+When you use a computer, you continuously interact with objects and programs, through events. An event is anything that happens, such as moving the mouse, clicking on objects, changing data, or activating windows. Programs can raise events of their own as well. A program can respond to events using event procedures. For example, if you click a scroll button, Excel responds by scrolling the window down.
+As a programmer, you can write event procedures that will respond to (or trap) events by users. These event procedures can trap events in the worksheet, in the workbook, at the application level, or in a chart. In this article, I introduce you to chart event procedures in Microsoft Excel, which you can use for charts on a chart sheet and embedded charts.
+Why Use Chart Events?
+Chart events can make it much easier for people to use your programs, and add interactivity to your charts. Perhaps you need users to select a point in a series. If you create an event procedure that detects a click on the chart, users won’t have to type in a series name and a point number.
+After the click the program can perform one or more useful tasks:
+      * Display a customized chart tip;
+      * Extract information from the chart and place it in a worksheet;
+      * Activate another chart or worksheet;
+      * Identify points to be included in a subsequent analysis.
+Although Excel can accept data in a variety of formats and arrangements, you can do certain things with the data to ensure your charts are easy to build and maintain. “Good data” has these characteristics:
+      1. Data for each series is arranged in Columns (preferable to Rows)
+      2. First column is used for Categories (X axis labels)
+      3. First row is used for Series Names
+      4. Top left cell is blank
+      5. Data below series names is numeric (right-adjusted with no alignment specified)
+      6. There are no blank rows or blank columns within the data range
+      7. There is a buffer row or column between the table and any other non-blank cells.
+ Well-Formed Chart Data 
+
+In this case, I use sample data similar to the above above to demonstrate chart event procedures.
+Chart Sheet Events
+The first set of examples is for charts that reside on their own sheets, not embedded in worksheets. These examples are contained in the downloadable workbook ChartSheetEvents.xlsm.
+Create A Chart Sheet
+Select the entire range you want included in your chart, or select a single cell within this range. If you followed guidelines 6 and 7 about Good Data, Excel selects the range of continuous data that includes the selected cell.
+Select the data range, or a single cell within the data range. Press the F11 function key, to quickly create a chart sheet from the data range range, using the default chart type.
+ Chart Sheet 
+
+The Chart Code Module
+Right-click the chart sheet tab, and select View Code from the pop-up menu. This opens the Visual Basic Editor (VBE).
+ Chart Sheet Tab Context Menu 
+
+Within the VBE, a code module appears with the caption ChartSheetEvents.xlsm – Chart1 (code):
+ Chart Code Module 
+
+This is a special kind of code module, which is associated with the chart. Code contained in this module runs when events occur on the chart.
+The code module should contain only the line
+Option Explicit
+This line means any variable used in the module must be explicitly declared prior to use. This approach is slightly more work, but it assures that no errant variable will be accidentally defined by a typographical error.
+If the module does not include the Option Explicit line, type it in, then go to the VBE’s Tools menu, selectOptions…, and on the Editor tab, check the Require Variable Declarations box. Every module you create after setting this option will automatically contain the Option Explicit line.
+While you’re in the dialog, you may as well uncheck Auto Syntax Check, which pops up a dialog whenever you enter code with a syntax error. Since the code with an error is also colored red, there’s no need for an annoying dialog which you have to cancel to continue.
+ Chart Code Module with Event Procedure Stub 
+
+Chart Event Procedure
+At the top of the code module, you see two dropdowns. One contains the items (General) and Chart, the other contains (Declarations). While you can type your entire event procedure from scratch, it’s easier to use these dropdowns when creating procedures.
+Select Chart from the left hand dropdown. The following stub of an event procedure appears in the code module:
+ Chart Code Module with Event Procedure Stub 
+
+Private Sub Chart_Activate()
+ 
+End Sub
+This procedure runs whenever the chart is activated. Between these lines, type whatever code you want to be executed when the chart is activated. For example:
+Private Sub Chart_Activate()
+    MsgBox "Welcome to my Chart!"
+End Sub
+Now when you activate the chart, the following message box appears:
+ Welcome Message Box 
+
+This example is demonstrated using the chart named Welcome in the companion workbook. This is just an example. Remove the message box code before it makes you insane.
+More Chart Events
+Chart_Activate is good for illustration of chart events, but other events can be much more useful. The chart events available to you are listed below. These can be accessed from the right hand dropdown in the chart code module when Chart is selected in the left hand dropdown.
+      * Activate
+      * BeforeDoubleClick
+      * BeforeRightClick
+      * Calculate
+      * Deactivate
+      * DragOver
+      * DragPlot
+      * MouseDown
+      * MouseMove
+      * MouseUp
+      * Resize
+      * Select
+      * SeriesChange
+Next you can use an event to tell which chart element has been selected. Choose Chart from the left hand dropdown of the code module, then choose Select from the right hand dropdown, to produce the following procedure stub:
+ Chart Code Module with Event Procedure Stub 
+
+Private Sub Chart_Select(ByVal ElementID As Long, _
+        ByVal Arg1 As Long, ByVal Arg2 As Long)
+ 
+End Sub
+Note that I’ve inserted the line continuation character (an underscore) in the first line to wrap the line at a convenient place.
+The Chart_Select event fires whenever a chart element has been selected. Three arguments are passed to the procedure: ElementID, which identifies the selected chart element, and Arg1 and Arg2, which provide additional information. For example, if ElementID identifies that a series has been selected, Arg1 identifies which series has been selected, and Arg2 identifies the point within the series which has been selected, orArg1 = -1 to indicate that the entire series is selected. If Arg1 or Arg2 are not relevant to the selectedElementID, they are assigned the value zero.
+When you select Chart from the left hand dropdown, the Chart_Activate procedure shell is created in the code module (Activate is the default event for a chart). You can ignore it, delete it, or use it for another purpose.
+This table lists the ElementID values, and the meanings of their associated Arg1 and Arg2 parameters.
+ Chart Element List 
+
+No need to memorize the details, since the VBE Object Browser (VBE View menu > Object Browser) knows everything.
+ Object Browser showing Chart Element List 
+
+Now you can add a line to the procedure to identify which chart element has been selected, and show the values of its associated arguments:
+Private Sub Chart_Select(ByVal ElementID As Long, _
+        ByVal Arg1 As Long, ByVal Arg2 As Long)
+ 
+    MsgBox "Element: " & ElementID & vbCrLf & "  Arg 1: " & Arg1 _
+        & vbCrLf & "  Arg 2: " & Arg2
+ 
+End Sub
+To test your event procedure, select the chart’s title. Click OK in the message box, and then test your event procedure with other elements, such as a series, and a point in a series.
+The following three message boxes appear when selecting the Chart Title (ElementID = 4), Series 1 (ElementID = 3, Arg1 = 1, and Arg2 = -1), and Series 1 Point 4 (ElementID = 3, Arg1 = 1, Arg2 = 4). To select an individual point, you must single click twice: once to select the entire series, then again to select the point.
+ Object Browser showing Chart Element List 
+
+This example is demonstrated using the chart named Select in the companion workbook.
+These message boxes aren’t very informative – text descriptions would be more useful. Replace theChart_Select event code with the following more extensive procedure. It converts the values to text, and creates a more informative message:
+Private Sub Chart_Select(ByVal ElementID As Long, _
+        ByVal Arg1 As Long, ByVal Arg2 As Long)
+ 
+    Dim sElement As String
+    Dim sArg As String
+ 
+    Select Case ElementID
+        Case xlChartArea
+            sElement = "Chart Area"
+        Case xlChartTitle
+            sElement = "Chart Title"
+        Case xlPlotArea
+            sElement = "Plot Area"
+        Case xlLegend
+            sElement = "Legend"
+        Case xlFloor
+            sElement = "Floor"
+        Case xlWalls
+            sElement = "Walls"
+        Case xlCorners
+            sElement = "Corners"
+        Case xlDataTable
+            sElement = "Data Table"
+        Case xlSeries
+            sElement = "Series " & Arg1
+            If Arg2 > 0 Then sArg = "Point " & Arg2
+        Case xlDataLabel
+            sElement = "Data Label"
+            sArg = "Series " & Arg1
+            If Arg2 > 0 Then sArg = sArg & ", Point " & Arg2
+        Case xlTrendline
+            sElement = "Trendline"
+            sArg = "Series " & Arg1 & ", Trendline " & Arg2
+        Case xlErrorBars
+            sElement = "Error Bars"
+            sArg = "Series " & Arg1
+        Case xlXErrorBars
+            sElement = "X Error Bars"
+            sArg = "Series " & Arg1
+        Case xlYErrorBars
+            sElement = "Y Error Bars"
+            sArg = "Series " & Arg1
+        Case xlLegendEntry
+            sElement = "Legend Entry"
+            sArg = "Series " & Arg1
+        Case xlLegendKey
+            sElement = "Legend Key"
+            sArg = "Series " & Arg1
+        Case xlAxis
+            sElement = IIf(Arg1 = 1, "Primary ", "Secondary ")
+            sElement = sElement & IIf(Arg2 = 1, "Category ", "Value ")
+            sElement = sElement & "Axis"
+        Case xlMajorGridlines
+            sElement = IIf(Arg1 = 1, "Primary ", "Secondary ")
+            sElement = sElement & IIf(Arg2 = 1, "Category ", "Value ")
+            sElement = sElement & "Major Gridlines"
+        Case xlMinorGridlines
+            sElement = IIf(Arg1 = 1, "Primary ", "Secondary ")
+            sElement = sElement & IIf(Arg2 = 1, "Category ", "Value ")
+            sElement = sElement & "Minor Gridlines"
+        Case xlAxisTitle
+            sElement = IIf(Arg1 = 1, "Primary ", "Secondary ")
+            sElement = sElement & IIf(Arg2 = 1, "Category ", "Value ")
+            sElement = sElement & "Axis Title"
+        Case xlDisplayUnitLabel
+            sElement = IIf(Arg1 = 1, "Primary ", "Secondary ")
+            sElement = sElement & IIf(Arg2 = 1, "Category ", "Value ")
+            sElement = sElement & "Axis Display Unit Label"
+        Case xlUpBars
+            sElement = "Up Bars"
+            sArg = "Group Index " & Arg1
+        Case xlDownBars
+            sElement = "Down Bars"
+            sArg = "Group Index " & Arg1
+        Case xlSeriesLines
+            sElement = "Series Lines"
+            sArg = "Group Index " & Arg1
+        Case xlHiLoLines
+            sElement = "High-Low Lines"
+            sArg = "Group Index " & Arg1
+        Case xlDropLines
+            sElement = "Drop Lines"
+            sArg = "Group Index " & Arg1
+        Case xlRadarAxisLabels
+            sElement = "Radar Axis Labels"
+            sArg = "Group Index " & Arg1
+        Case xlShape
+            sElement = "Shape"
+            sArg = "Shape Number " & Arg1
+        Case xlNothing
+            sElement = "Nothing"
+    End Select
+ 
+    MsgBox sElement & IIf(Len(sArg) > 0, vbCrLf & sArg, "")
+End Sub
+Test your new code, by selecting elements in the chart. Here are the revised message boxes, made more informative by analyzing the ElementID and other arguments:
+ Object Browser showing Chart Element List 
+
+This example is demonstrated using the chart named Nicely Select in the companion workbook.
+This is a more useful procedure, because it tells us in human words what has been selected. On the other hand, it is less useful than it could be, because it pops up a message box every time a new chart element is selected, forcing the user to clear the message box before proceeding.
+Identify the Point Clicked By the User
+Another useful event procedure tells you which point was clicked on, and display its values. Chart_Select is not the best event to trap to detect clicking on a point, because two Chart_Select events must occur when a point is selected: the series is selected by the first click, and the point by the second. The MouseUp event is a better event to trap.
+To create a new event procedure, choose Chart in the left dropdown and MouseUp in the right, to create this shell:
+Private Sub Chart_MouseUp(ByVal Button As Long, ByVal Shift As Long, _
+        ByVal x As Long, ByVal y As Long)
+ 
+End Sub
+Four arguments are passed to this procedure.
+Button tells which mouse button was released: xlNoButton, xlPrimaryButton (usually the left button),xlSecondaryButton (right button), or xlMiddleButton.
+Shift tells which keys are depressed when the mouse button was released. The value of Shift can be one or a sum of several of the following values:
+ Shift Key Codes 
+
+For example, if Shift = 2, the CTRL key was depressed when the mouse button was clicked; if Shift = 5, both the SHIFT and ALT keys were depressed.
+The coordinates of the cursor, x and y, are in chart object client coordinate units. It’s not necessary to be concerned about these, since you just pass them along to other functions to get more useful information.
+Test the following event procedure, which uses Chart_MouseUp to determine where the mouse click occurred. The procedure:
+      * traps the release of the button,
+      * determines where on the chart the click occurred (x, y),
+      * passes these coordinates to the GetChartElement function to determine what chart element is located at these coordinates,
+      * determines whether a data point (or data label) is located at the mouse click,
+      * extracts the X and Y values for the data point, if the click occurred at a data point or data label,
+      * displays this information in a message box.
+Private Sub Chart_MouseUp(ByVal Button As Long, ByVal Shift As Long, _
+        ByVal x As Long, ByVal y As Long)
+ 
+    Dim ElementID As Long, Arg1 As Long, Arg2 As Long
+    Dim myX As Variant, myY As Double
+ 
+    With ActiveChart
+        ' Pass x & y, return ElementID and Args
+        .GetChartElement x, y, ElementID, Arg1, Arg2
+ 
+        ' Did we click over a point or data label?
+        If ElementID = xlSeries Or ElementID = xlDataLabel Then
+            If Arg2 > 0 Then
+                ' Extract x value from array of x values
+                myX = WorksheetFunction.Index _
+                    (.SeriesCollection(Arg1).XValues, Arg2)
+                ' Extract y value from array of y values
+                myY = WorksheetFunction.Index _
+                    (.SeriesCollection(Arg1).Values, Arg2)
+ 
+                ' Display message box with point information
+                MsgBox "Series " & Arg1 & vbCrLf _
+                    & """" & .SeriesCollection(Arg1).Name & """" & vbCrLf _
+                    & "Point " & Arg2 & vbCrLf _
+                    & "X = " & myX & vbCrLf _
+                    & "Y = " & myY
+            End If
+        End If
+    End With
+End Sub
+Here is an informative dialog that results from clicking on the 4th point of the first series. Compare to the third dialog from the last example above.
+ Mouse Up Dialog 
+
+This example is demonstrated using the chart named Identify Point in the companion workbook.
+You could do many things with the data from this procedure.
+      * A message box requires a user response to continue; you could replace the dialog by drawing a textbox with the same information, as a smarter chart tip. Use the MouseMove event instead, to mimic Excel’s normal chart tip behavior.
+      * You could place this data into a worksheet range. After clicking on several points, you would have a small table of values from the selected points. These could be used for subsequent analysis.
+      * You could identify the clicked point, then jump to another appropriate chart. This approach has the effect of drilling down deeper into the data. See the short example below.
+Drill Down to a Related Chart
+Suppose the values for the categories A through E in the chart reflected sums of other values. You could have several other chart sheets, Chart A through Chart E, that show detail for the selected categories. An event procedure such as the following produces this kind of drill down effect (to test the procedure, create chart sheets named Chart A, Chart B, etc.):
+Private Sub Chart_MouseUp(ByVal Button As Long, ByVal Shift As Long, _
+        ByVal x As Long, ByVal y As Long)
+ 
+    Dim ElementID As Long, Arg1 As Long, Arg2 As Long
+    Dim myX As Variant
+ 
+    With ActiveChart
+        ' Pass x & y, return ElementID and Args
+        .GetChartElement x, y, ElementID, Arg1, Arg2
+ 
+        ' Did we click over a point or data label?
+        If ElementID = xlSeries Or ElementID = xlDataLabel Then
+            If Arg2 > 0 Then
+                ' Extract x value from array of x values
+                myX = WorksheetFunction.Index _
+                    (.SeriesCollection(Arg1).XValues, Arg2)
+ 
+                ' Don't crash if chart doesn't exist
+                On Error Resume Next
+                ' Activate the appropriate chart
+                ThisWorkbook.Charts("Chart " & myX).Select
+                On Error GoTo 0
+            End If
+        End If
+    End With
+End Sub
+To return to the starting chart on another mouse click, you can add the following Chart_MouseUp event procedure to the code modules of the detail charts. For example, add the following procedure to the code module for the Chart A sheet. When you select an element in Chart A, you’ll return to the main chart:
+Private Sub Chart_MouseUp(ByVal Button As Long, ByVal Shift As Long, ByVal x As Long, ByVal y As Long)
+
+
+    ' Don't crash if chart doesn't exist
+    On Error Resume Next
+    ' Return to calling chart
+    ThisWorkbook.Charts("Chart Drilldown").Select
+    On Error GoTo 0
+
+
+End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Workbook Events
+
+
+The event Workbook_Open will be added by default, and takes effect when the workbook is opened :
+Private Sub Workbook_Open()
+
+End Sub
+For example, if we add the following instruction, a dialog box will be displayed when the workbook is opened :
+Private Sub Workbook_Open()
+    MsgBox "Welcome"
+End Sub
+Workbook_BeforeClose
+To execute instructions immediately before the workbook is closed, choose BeforeClose :
+ close - workbook events 
+
+Private Sub Workbook_BeforeClose(Cancel As Boolean)
+
+End Sub
+The closing of the workbook can be cancelled by assigning the value True to the variable "Cancel".
+Here is an example in which the user is asked to confirm the closing of the workbook :
+Private Sub Workbook_BeforeClose(Cancel As Boolean)
+    'If the user responds NO, the Cancel variable will have the value TRUE (which will cancel the closing of the workbook)
+    If MsgBox("Are you sure that you want to close this workbook ?", 36, "Confirm") = vbNo Then
+        Cancel = True
+    End If
+End Sub
+Workbook_BeforeSave
+This event will fire immediately before the workbook is saved :
+Private Sub Workbook_BeforeSave(ByVal SaveAsUI As Boolean, Cancel As Boolean)
+
+End Sub
+File save can be cancelled by assigning the value True to the variable "Cancel".
+Workbook_BeforePrint
+This event will fire immediately before printing :
+Private Sub Workbook_BeforePrint(Cancel As Boolean)
+
+End Sub
+Printing can be cancelled by assigning the value True to the variable "Cancel".
+Workbook_AfterSave
+This event will fire immediately after a save command is completed :
+Private Sub Workbook_AfterSave(ByVal Success As Boolean)
+
+End Sub
+Workbook_SheetActivate
+This event will fire each time the user switches from one worksheet to another :
+Private Sub Workbook_SheetActivate(ByVal Sh As Object)
+
+End Sub
+In this example, the name of the worksheet is displayed in a dialog box :
+Private Sub Workbook_SheetActivate(ByVal Sh As Object)
+    MsgBox "Name of Sheet : " & Sh.Name
+End Sub
+Workbook_SheetBeforeDoubleClick
+This event will fire immediately before a double click on a cell :
+Private Sub Workbook_SheetBeforeDoubleClick(ByVal Sh As Object, ByVal Target As Range, Cancel As Boolean)
+
+End Sub
+For example, we can use this event to add a background color to a cell depending on which worksheet it is on :
+Private Sub Workbook_SheetBeforeDoubleClick(ByVal Sh As Object, ByVal Target As Range, Cancel As Boolean)
+    If Sh.Name = "Sheet1" Then
+        Target.Interior.Color = RGB(255, 108, 0) 'Orange color
+    Else
+        Target.Interior.Color = RGB(136, 255, 0) 'Green color
+    End If
+End Sub
+Workbook_SheetBeforeRightClick
+This event will fire immediately before a right click on a cell :
+Private Sub Workbook_SheetBeforeRightClick(ByVal Sh As Object, ByVal Target As Range, Cancel As Boolean)
+
+End Sub
+Workbook_SheetChange
+This event will fire each time the contents of a cell are modified :
+Private Sub Workbook_SheetChange(ByVal Sh As Object, ByVal Target As Range)
+
+End Sub
+Workbook_SheetCalculate
+This event will fire each time a worksheet's data is calculated or recalculated :
+Private Sub Workbook_SheetCalculate(ByVal Sh As Object)
+
+End Sub
+Workbook_SheetSelectionChange
+This event will fire each time the selection changes on a calculation worksheet :
+Private Sub Workbook_SheetSelectionChange(ByVal Sh As Object, ByVal Target As Range)
+
+End Sub
+In this example, a background color is added if cell A1 is empty :
+Private Sub Workbook_SheetSelectionChange(ByVal Sh As Object, ByVal Target As Range)
+    If Range("A1") = "" Then
+        Target.Interior.Color = RGB(124, 255, 255) 'Blue color
+   End If
+End Sub
+Workbook_NewSheet
+This event will fire each time a new worksheet is added to the workbook :
+Private Sub Workbook_NewSheet(ByVal Sh As Object)
+
+End Sub
+Workbook_SheetFollowHyperlink
+This event will fire whenever a hypertext link is clicked :
+Private Sub Workbook_SheetFollowHyperlink(ByVal Sh As Object, ByVal Target As Hyperlink)
+
+End Sub
+
+
+
+
+
+
+Worksheet Events
+
+
+Private Sub Worksheet_SelectionChange(ByVal Target As Range)
+
+End Sub
+For example, the code below adds background colors to one or more selected cells and automatically removes the background color from the previous selection when the selection is changed :
+Private Sub Worksheet_SelectionChange(ByVal Target As Range)
+   Cells.Interior.colorindex = 0  'Turn off previous use
+   If Cells(1, 1) = "." Then Exit Sub
+   Target.EntireRow.Interior.colorindex = 38
+End Sub
+Worksheet_Activate
+This event will fire when the worksheet is activated :
+Private Sub Worksheet_Activate()
+
+End Sub
+Worksheet_Deactivate
+This event will fire when another worksheet is activated :
+Private Sub Worksheet_Deactivate()
+     Me.Visible = xlSheetHidden
+End Sub
+Worksheet_BeforeDoubleClick
+This event will fire when a cell in the worksheet is double clicked :
+Private Sub Worksheet_BeforeDoubleClick(ByVal Target As Range, Cancel As Boolean)
+
+End Sub
+Example:
+Private Sub Worksheet_BeforeDoubleClick(ByVal _
+      Target As Range, Cancel As Boolean)
+  Cancel = True
+  Target.Value = Now    'only down to seconds
+  Target.NumberFormat = "yyyy-mm-dd hh:mm:ss"
+End Sub
+
+
+Worksheet_BeforeRightClick
+This event will fire when the user right clicks on the worksheet :
+Private Sub Worksheet_BeforeRightClick(ByVal Target As Range, Cancel As Boolean)
+
+End Sub
+Example:
+Private Sub Worksheet_BeforeRightClick _
+(ByVal Target As Excel.Range, Cancel As Boolean)
+Dim cBar As CommandBar
+Dim cCon1 As CommandBarControl
+Dim cCon2 As CommandBarControl
+ 
+'Prevent the standard popup showing
+ Cancel = True
+ 
+'We must delete the old one first
+On Error Resume Next
+Application.CommandBars("Ozgrid").Delete
+ 
+    'Add a CommandBar and set the CommandBar _
+     variable to a new popup
+     Set cBar = Application.CommandBars.Add _
+     (Name:="Ozgrid", Position:=msoBarPopup)
+ 
+    'Add a control and set our 1st CommandBarControl _
+     variable to a new control
+     Set cCon1 = cBar.Controls.Add
+    'Add some text and assign the Control
+    With cCon1
+        .Caption = "I'm a custom control"
+        .OnAction = "MyMacro"
+    End With
+ 
+    'Add a control and set our 2nd CommandBarControl _
+     variable to a new control
+     Set cCon2 = cBar.Controls.Add
+    'Add some text and assign the Control
+    With cCon2
+        .Caption = "So am I"
+        .Caption = "AnotherMacro"
+    End With
+ 
+cBar.ShowPopup
+End Sub
+Worksheet_Calculate
+This event will fire when the data on the worksheet are calculated or recalculated :
+Private Sub Worksheet_Calculate()
+
+End Sub
+Example:
+Private Sub Worksheet_Calculate()
+    If IsNumeric(Range("A1")) Then
+      If Range("A1").Value >= 100 Then
+        MsgBox "Range A1 has reached is limit of 100", vbInformation
+      End If
+    End If
+End Sub
+
+
+Worksheet_Change
+This event will fire when the contents of cells in the worksheet are changed :
+Private Sub Worksheet_Change(ByVal Target As Range)
+
+End Sub
+Example:
+Private Sub Worksheet_Change(ByVal Target As Excel.Range)
+Dim rWatchRange As Range
+On Error GoTo ResetEvents
+ 
+'Set range variable to A1:A10
+ Set rWatchRange = Range("A1:A10")
+ 
+    'The cell they have changed (Target) _
+     is within A1:A10
+    If Not Application.Intersect _
+            (Target, rWatchRange) Is Nothing Then
+            'They entered a number
+             If IsNumeric(Target.Value) Then
+                'Prevent the Event from firing again _
+                 when we multiply it(the Target)by itself.
+                 Application.EnableEvents = False
+                'Multiply it by itself
+                 Target.Value = Target.Value * Target.Value
+            End If
+    End If
+ 
+ResetEvents:
+Application.EnableEvents = True
+End Sub
+Worksheet_FollowHyperlink
+This event will fire when the user clicks on a hypertext link :
+Private Sub Worksheet_FollowHyperlink(ByVal Target As Hyperlink)
+
+End Sub
+Example:
+You might want to apply this only to hyperlinks to particular named cell, like:
+Private Sub Worksheet_FollowHyperlink(ByVal Target As Hyperlink)
+  If Target.SubAddress = "Account_Number" Then
+    ActiveCell.Value = Target.Parent.Value
+  End If
+End Sub
+
+
+Temporarily deactivate all events
+To execute code without firing any events, put it between the following two lines of code :
+Application.EnableEvents = False ' => deactivate events
+'Instructions
+Application.EnableEvents = True ' => reactivate events
+
+
+
+
+
+
+
+
+Worksheet Functions
+Sub test()
+    var_test = WorksheetFunction.CountBlank(Range("A1:D8"))
+    MsgBox var_test
+End Sub
+
+
+
+
+
+
+Userform And Controls
+The UserForm window and "Toolbox" will appear :
+ usf2 - userform 
+
+If you don't see the Properties window, make sure that it is shown and then start by editing the name of the UserForm (so that you can easily find it later on) :
+ properties - userform 
+
+A UserForm has its own events, just like a workbook or a worksheet. To add events, double click on the UserForm window :
+ events - userform 
+
+Now let's create two events as an example of how they work. The first event will define the initial dimensions of the UserForm, and the second will increase each of its dimensions by 50 pixels when the user clicks.
+The event UserForm_Initialize will fire when the UserForm is launched :
+ height - userform 
+
+Private Sub UserForm_Initialize()
+    my_userform.Height = 100
+    my_userform.Width = 100
+End Sub
+To simplify the code, we can use Me instead of the name of the UserForm (since this code is within the UserForm that we're working with) :
+Private Sub UserForm_Initialize()
+    Me.Height = 100
+    Me.Width = 100
+End Sub
+The second event will fire when the user clicks on the UserForm :
+Private Sub UserForm_Initialize()
+    Me.Height = 100
+    Me.Width = 100
+End Sub
+
+Private Sub UserForm_Click()
+    Me.Height = Me.Height + 50
+    Me.Width = Me.Width + 50
+End Sub
+ window - userform 
+
+Launch a UserForm
+To launch a UserForm in a procedure, use Show :
+Sub show_userform()
+    my_userform.Show
+End Sub
+
+
+Key Down Event
+Private Sub UserForm_KeyDown(ByVal KeyCode As MSForms.ReturnInteger, ByVal Shift As Integer)
+
+    Const SHIFT_MASK = 1
+    Const CTRL_MASK = 2
+    Const ALT_MASK = 4
+
+    If KeyCode = vbKeyF1 Then
+        If Shift = SHIFT_MASK Then
+            MsgBox "F1+Shift"
+        ElseIf Shift = (SHIFT_MASK Or CTRL_MASK) Then
+            MsgBox "F1+Ctrl+Shift"
+        End If
+    End If
+    
+End Sub
+
+
+Key Press Event
+Private Sub UserForm_KeyPress(ByVal KeyAscii As MSForms.ReturnInteger)
+    Select Case KeyAscii
+        Case 13 'enter key
+            CommandButton_Go_Click
+        Case Else 'who cares
+    End Select
+End Sub
+Comparision b\w key press,key down,key up
+keydown
+Fires when the user depresses a key. It repeats while the user keeps the key depressed.
+keypress
+Fires when an actual character is being inserted in, for instance, a text input. It repeats while the user keeps the key depressed.
+keyup
+Fires when the user releases a key, after the default action of that key has been performed.
+
+
+Mouse Down And Up
+Private Sub object_MouseDown( ByVal Button As fmButton, ByVal Shift As fmShiftState, ByVal X As Single, ByVal Y As Single)
+
+Private Sub object_MouseUp( ByVal Button As fmButton, ByVal Shift As fmShiftState, ByVal X As Single, ByVal Y As Single)
+
+
+Part
+	Description
+	object
+	Required. A valid object.
+	index
+	Required. The index of the page or tab in a MultiPage or TabStrip with the specified event.
+	Button
+	Required. An integer value that identifies which mouse button caused the event.
+	Shift
+	Required. The state of SHIFT, CTRL, and ALT.
+	X, Y
+	Required. The horizontal or vertical position, in points, from the left or top edge of the form, Frame.
+	
+
+Settings
+The settings for Button are:
+Constant
+	Value
+	Description
+	fmButtonLeft
+	1
+	The left button was pressed.
+	fmButtonRight
+	2
+	The right button was pressed.
+	fmButtonMiddle
+	4
+	The middle button was pressed.
+	The settings for Shift are:
+Value
+	Description
+	1
+	SHIFT was pressed.
+	2
+	CTRL was pressed.
+	3
+	SHIFT and CTRL were pressed.
+	4
+	ALT was pressed.
+	5
+	ALT and SHIFT were pressed.
+	6
+	ALT and CTRL were pressed.
+	7
+	ALT, SHIFT, and CTRL were pressed.
+	You can identify individual keyboard modifiers by using the following constants:
+Constant
+	Value
+	Description
+	fmShiftMask
+	1
+	Mask to detect SHIFT.
+	fmCtrlMask
+	2
+	Mask to detect CTRL.
+	fmAltMask
+	4
+	Mask to detect ALT.
+	
+
+Example
+This example runs when a mouse button is pressed while the pointer is over a chart.
+Private Sub Chart_MouseDown(ByVal Button As Long, _
+        ByVal Shift As Long, ByVal X As Long, ByVal Y As Long)
+    MsgBox "Button = " & Button & chr$(13) & _
+        "Shift = " & Shift & chr$(13) & _ 
+        "X = " & X & " Y = " & Y
+End Sub
+
+
+Example
+This example runs when the position of the mouse pointer changes over a chart.
+Private Sub Chart_MouseMove(ByVal Button As Long, ByVal Shift As Long, ByVal X As Long, ByVal Y As Long)
+    MsgBox "X = " & X & " Y = " & Y
+End Sub
+
+
+Example
+This example runs when a mouse button is released over a chart.
+Private Sub Chart_MouseUp(ByVal Button As Long, _
+        ByVal Shift As Long, ByVal X As Long, ByVal Y As Long)
+    MsgBox "Button = " & Button & chr$(13) & _
+        "Shift = " & Shift & chr$(13) & _ 
+        "X = " & X & " Y = " & Y
+End Sub
+
+
+
+
+Error Handling in VBA
+
+Introduction
+Error handling refers to the programming practice of anticipating and coding for error conditions that may arise when your program runs. Errors in general come in three flavors: compiler errors such as undeclared variables that prevent your code from compiling; user data entry error such as a user entering a negative value where only a positive number is acceptable; and run time errors, that occur when VBA cannot correctly execute a program statement.  We will concern ourselves here only with run time errors.  Typical run time errors include attempting to access a non-existent worksheet or workbook, or attempting to divide by zero. The example code in this article will use the division by zero error (Error 11) when we want to deliberately raise an error.
+Your application should make as many checks as possible during initialization to ensure that run time errors do not occur later.  In Excel, this includes ensuring that required workbooks and worksheets are present and that required names are defined.  The more checking you do before the real work of your application begins, the more stable your application will be. It is far better to detect potential error situations when your application starts up before data is change than to wait until later to encounter an error situation.
+If you have no error handling code and a run time error occurs, VBA will display its standard run time error dialog box. While this may be acceptable, even desirable, in a development environment, it is not acceptable to the end user in a production environment. The goal of well designed error handling code is to anticipate potential errors, and correct them at run time or to terminate code execution in a controlled, graceful method.  Your goal should be to prevent unhandled errors from arising.
+A note on terminology: Throughout this article, the term procedure should be taken to mean a Sub, Function, orProperty procedure, and the term exit statement should be taken to mean Exit Sub, Exit Function, or Exit Property.  The term end statement should be taken to mean End Sub , End Function,  End Property, or just End.    
+The On Error Statement
+The heart of error handling in VBA is the On Error statement. This statement instructs VBA what to do when an run time error is encountered.  The On Error statement takes three forms.
+On Error Goto 0
+On Error Resume Next
+On Error Goto <label>:
+The first form, On Error Goto 0, is the default mode in VBA.  This indicates that when a run time error occurs VBA should display its standard run time error message box, allowing you to enter the code in debug mode or to terminate the VBA program. When On Error Goto 0 is in effect, it is the same as having no enabled error handler.  Any error will cause VBA to display its standard error message box.
+The second form, On Error Resume Next , is the most commonly used and misused form.  It instructs to VBA to essentially ignore the error and resume execution on the next line of code. It is very important to remember that On Error Resume Next does not in any way "fix" the error. It simply instructs VBA to continue as if no error occured. However, the error may have side effects, such as uninitialized variables or objects set to Nothing.  It is the responsibility of your code to test for an error condition and take appropriate action.  You do this by testing the value of Err.Number  and if it is not zero execute appropriate code.  For example,
+    On Error Resume Next
+    N = 1 / 0    ' cause an error
+    If Err.Number <> 0 Then 
+        N = 1
+    End If
+This code attempts to assign the value 1 / 0 to the variable N. This is an illegal operations, so VBA will raise an error 11 -- Division By Zero -- and because we have On Error Resume Next in effect, code continues to the If statement. This statement tests the value of Err.Number  and assigns some other number to N.
+The third form On Error of  is  On Error Goto <label>:which tells VBA to transfer execution to the line following the specified line label. Whenever an error occurs, code execution immediately goes to the line following the line label.  None of the code between the error and the label is executed, including any loop control statements.
+    On Error Goto ErrHandler:
+    N = 1 / 0    ' cause an error
+    '
+    ' more code
+    '
+    Exit Sub 
+    ErrHandler:
+    ' error handling code
+    Resume Next
+    End Sub
+Enabled And Active Error Handlers
+An error handler is said to be enabled when an  On Error statement is executed.  Only one error handler is enabled at any given time, and VBA will behave according to the enabled error handler.  An active error handler is the code that executes when an error occurs and execution is transferred to another location via a On Error Goto <label>:statement. 
+Error Handling Blocks And On Error Goto
+An error handling block, also called an error handler, is a section of code to which execution is tranferred via a On Error Goto <label>:  statement. This code should be designed either to fix the problem and resume execution in the main code block or to terminate execution of the procedure. You can't use  to the On Error Goto <label>:  statement merely skip over lines. For example, the following code will not work properly:
+    On Error GoTo Err1:
+    Debug.Print 1 / 0
+    ' more code
+Err1:
+    On Error GoTo Err2:
+    Debug.Print 1 / 0
+    ' more code
+Err2:
+
+When the first error is raised, execution transfers to the line following Err1:. The error hander is still active when the second error occurs, and therefore the second error is not trapped by the On Error statement.
+ 
+The Resume Statement
+The Resume statement instructs VBA to resume execution at a specified point in the code.  You can use  Resume only in an error handling block; any other use will cause an error. Moreover, Resume is the only way, aside from exiting the procedure, to get out of an error handling block. Do not use the Goto statement to direct code execution out of an error handling block.  Doing so will cause strange problems with the error handlers.
+The Resume statement takes three syntactic form:
+Resume
+Resume Next
+Resume <label>
+Used alone, Resume causes execution to resume at the line of code that caused the error.  In this case you must ensure that your error handling block fixed the problem that caused the initial error. Otherwise, your code will enter an endless loop, jumping between the line of code that caused the error and the error handling block.  The following code attempts to activate a worksheet that does not exist. This causes an error (9 - Subscript Out Of Range), and the code jumps to the error handling block which creates the sheet, correcting the problem, and resumes execution at the line of code that caused the error.
+
+    On Error GoTo ErrHandler:
+    Worksheets("NewSheet").Activate 
+    Exit Sub
+
+    ErrHandler:
+    If Err.Number = 9 Then
+        ' sheet does not exist, so create it
+        Worksheets.Add.Name = "NewSheet"
+        ' go back to the line of code that caused the problem
+        Resume
+    End If
+
+The second form of Resume is Resume Next . This causes code execution to resume at the line immediately following the line which caused the error.  The following code causes an error (11 - Division By Zero) when attempting to set the value of N. The error handling block assigns 1 to the variable N, and then causes execution to resume at the statement after the statement that caused the error.
+    On Error GoTo ErrHandler:
+    N = 1 / 0
+    Debug.Print N
+    Exit Sub
+
+    ErrHandler:
+    N = 1
+    ' go back to the line following the error
+    Resume Next
+
+The third form of Resume is Resume <label>: . This causes code execution to resume at a line label. This allows you to skip a section of code if an error occurs. For example,
+     On Error GoTo ErrHandler:
+    N = 1 / 0
+    '
+    ' code that is skipped if an error occurs
+    '
+    Label1:
+    ' 
+    ' more code to execute
+    '
+    Exit Sub
+
+    ErrHandler:
+    ' go back to the line at Label1:
+    Resume Label1:
+
+
+
+
+Special Cells
+Sub visTest()
+    Dim c As Range
+    For Each c In Intersect(Selection, Selection.SpecialCells(xlCellTypeBlanks))
+        MsgBox c.Row
+    Next c
+End Sub
+
+
+Example: XlCellType constants
+xlCellTypeVisible
+xlCellTypeFormulas

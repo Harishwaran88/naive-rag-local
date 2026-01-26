@@ -1,0 +1,9 @@
+
+---
+
+## 4️⃣ Initialize Git locally
+
+From your project root:
+
+```bash
+git init

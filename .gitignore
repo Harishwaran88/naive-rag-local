@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.venv/
+.env
+app.py
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Chroma / Vector DB
+vector/
+chroma/
+rag_local_text/vector/
+
+# Logs
+*.log
