@@ -11,12 +11,6 @@ Purpose of This Project
 	 > Provide a clean starting point for advanced RAG pipelines
 
 
-The pipeline uses:
- - Local LLMs via Ollama
- - Sentence-Transformer models for embeddings
- - Plain text files as input documents
- - Vector similarity search for context retrieval
-
 The primary goal of this project is to understand and demonstrate the core building blocks of RAG systems in a transparent and modular way
 
 
@@ -50,14 +44,23 @@ Tech Stack
 | Input Format         | Text files (`.txt`)       |
 
 
+The pipeline uses:
+ - Local LLMs via Ollama
+ - Sentence-Transformer models for embeddings
+ - Plain text files as input documents
+ - Vector similarity search for context retrieval
+
+
 Project Workflow
 1. Document Loading
     Text data is loaded from a local .txt file.
 
 2. Text Chunking
     The document is split into overlapping chunks to:
-    Improve retrieval relevance
-    Prevent token overflow
+        Improve retrieval relevance
+        Prevent token overflow
+    Chunking approaches:
+        a. fixed-size overlapping word chunks
 
 3. Embedding Generation
     Each chunk is converted into a dense vector using a SentenceTransformer model.

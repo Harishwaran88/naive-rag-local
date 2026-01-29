@@ -2,19 +2,19 @@ from sentence_transformers import SentenceTransformer
 import numpy as np
 from sentence_transformers import SentenceTransformer
 import chromadb
-from chromadb.config import Settings
 import uuid
-from typing import List, Dict, Any, Tuple
-from sklearn.metrics.pairwise import cosine_similarity
+from typing import List, Dict, Any
 import os, requests
 from pathlib import Path
 
 
+def get_currentWD():
+    current_path = Path.cwd()
+    return current_path
+
 # ----------------------------------------------------------------
     # Document Loader: Reading text files
 # ----------------------------------------------------------------
-
-# Load text from a file path - local file system
 def load_text(file_path: str) -> str:
     with open(file_path, "r", encoding="utf-8") as f:
         return f.read()
@@ -24,20 +24,39 @@ def load_text(file_path: str) -> str:
     # Splitting text into smaller blocks
 # ----------------------------------------------------------------
 
-# This module provides utility functions for text processing.
-def chunk_text(text, chunk_size=400, overlap=80):
+def chunk_text_approach1(text, chunk_size=400, overlap=80):
     words = text.split()
     chunks = []
-
     start = 0
     while start < len(words):
         end = start + chunk_size
         chunk = " ".join(words[start:end])
         chunks.append(chunk)
         start = end - overlap
-
     return chunks
 
+
+# def chunk_text_approach2(doc_text: str):
+#     sentences = doc_text.split(". ")
+#     chunks = []
+#     for sentence in sentences:
+#         chunks.append(sentence)
+
+
+# def semantic_chunking(text, max_tokens=300):
+#     sentences = nltk.sent_tokenize(text)
+#     chunks, current = [], []
+
+#     for s in sentences:
+#         current.append(s)
+#         if token_len(" ".join(current)) >= max_tokens:
+#             chunks.append(" ".join(current))
+#             current = []
+
+#     if current:
+#         chunks.append(" ".join(current))
+
+#     return chunks
 
 # ----------------------------------------------------------------
     # Embedding Model: Converting text to numbers using libraries like sentence-transformers or transformers

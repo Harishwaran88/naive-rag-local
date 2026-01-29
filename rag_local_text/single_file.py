@@ -1,19 +1,16 @@
-from components import *
+from components import load_text, chunk_text_approach1, Embedding_Manager, VectorStore_Manager, RAG_Retriever_Manager, RAG_Pipeline_Manager, do_llm_call, get_currentWD
+from pathlib import Path
 
 
-def get_currentWD():
-    current_path = Path.cwd()
-    return current_path
+EMBEDDING_MODEL_NAME = "all-MiniLM-L6-v2"
+OLLAMA_URL = "http://localhost:11434/api/generate"
+OLLAMA_MODEL = "gemma:2b"
 
 currentWD = get_currentWD()
 f_path = fr"{currentWD}\Sample_Data\VBA Tutorial.txt"
-# vector_path = fr"{currentWD}\vector"
-EMBEDDING_MODEL_NAME = "all-MiniLM-L6-v2"
+
 CHROMA_PERSIST_DIR = fr"{currentWD}\vector"
 COLLECTION_NAME = "documents"
-
-OLLAMA_URL = "http://localhost:11434/api/generate"
-OLLAMA_MODEL = "gemma:2b"
 
 CHUNK_SIZE = 400
 CHUNK_OVERLAP = 80
@@ -22,18 +19,22 @@ TOP_K = 3
 FINAL_CONTEXT_K = 3
 SCORE_THRESHOLD = 0.2
 
+
 # -------------------------
 # DATA LOADING - Load raw text data from the given file path
 # -------------------------
+
+# load single file
 text_data = load_text(f_path)
 print("Loaded text data")
+
 
 # -------------------------
 # TEXT CHUNKING
     # Split the loaded text into smaller overlapping chunks
     # chunk_size=400 characters, overlap=80 characters between chunks
 # -------------------------
-list_of_chunks = chunk_text(text=text_data, chunk_size=CHUNK_SIZE, overlap=CHUNK_OVERLAP)
+list_of_chunks = chunk_text_approach1(text=text_data, chunk_size=CHUNK_SIZE, overlap=CHUNK_OVERLAP)
 print(f"Total Chunks Created: {len(list_of_chunks)}")
 
 

@@ -1,0 +1,3 @@
+Documents → Chunks → Embeddings → Vector Store
+                                   ↓
+User Question → Embedding → Similarity Search → Context → LLM Prompt → Answer
